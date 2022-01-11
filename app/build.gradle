@@ -33,6 +33,21 @@ android {
 
 dependencies {
 
+    //Mapbox (voir pour verrsion plus récente de mapbox
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.0.0'
+
+    //Retrofit et convertisseur json de google
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Coroutine
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5'
+
+    //Tests JUnit et Espresso
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
