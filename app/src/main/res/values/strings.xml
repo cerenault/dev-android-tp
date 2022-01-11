@@ -1,4 +1,4 @@
 <resources>
     <string name="access_token">pk.eyJ1IjoiY2VyZW5hdWx0IiwiYSI6ImNreTl6MjRhdzAwaDMyd284dGZtbGJxMnMifQ.LNCtaLu7TpCJHg0hkfA98w</string>
-    <string name="app_name">Dev Android TP</string>
+    <string name="app_name">Maps Editor</string>
 </resources>
