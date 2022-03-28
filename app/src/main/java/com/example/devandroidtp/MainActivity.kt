@@ -1,5 +1,6 @@
 package com.example.devandroidtp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -17,8 +18,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -51,12 +50,11 @@ class MainActivity : AppCompatActivity() {
             }
 
             binding.listMaps.setOnItemClickListener{ parent, view, position, id ->
-                Toast.makeText(
-                    this@MainActivity,
-                    binding.listMaps.getItemAtPosition(position).toString(),
-                    Toast.LENGTH_LONG
-                ).show()
+                val intent = Intent(this@MainActivity, MapEditActivity::class.java)
+                intent.putExtra("name", binding.listMaps.getItemAtPosition(position).toString())
+                startActivity(intent)
             }
         }
     }
 }
+
