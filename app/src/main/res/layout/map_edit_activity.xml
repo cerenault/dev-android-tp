@@ -3,30 +3,123 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingHorizontal="10sp">
 
     <TextView
         android:id="@+id/mapName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25sp"
-        android:textAlignment="center"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/map"
         android:layout_width="match_parent"
+        android:layout_height="400sp"
+        app:layout_constraintTop_toBottomOf="@id/mapName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/labelPointName"
+        android:text="Name : "
+        android:textSize="15sp"
+        android:layout_marginTop="10sp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/mapName" />
+        app:layout_constraintTop_toBottomOf="@+id/map"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/pointName"
+        android:textSize="15sp"
+        android:hint="Zone d'extraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/longitude"
+        app:layout_constraintStart_toEndOf="@+id/labelPointName"
+        app:layout_constraintTop_toBottomOf="@id/map"/>
+
+    <TextView
+        android:id="@+id/labelPointType"
+        android:textSize="15sp"
+        android:layout_marginTop="10sp"
+        android:text="Type : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointName"/>
+
+    <EditText
+        android:id="@+id/pointType"
+        android:textSize="15sp"
+        android:hint="Target"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/longitude"
+        app:layout_constraintTop_toBottomOf="@id/pointName"
+        app:layout_constraintStart_toEndOf="@+id/labelPointType"/>
+
+    <TextView
+        android:id="@+id/labelLat"
+        android:textSize="15sp"
+        android:layout_marginTop="10sp"
+        android:text="Latitude : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointType"/>
+
+    <EditText
+        android:id="@+id/latitude"
+        android:textSize="15sp"
+        android:hint="43.6679394"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/longitude"
+        app:layout_constraintTop_toBottomOf="@id/pointType"
+        app:layout_constraintStart_toEndOf="@+id/labelLat"/>
+
+    <TextView
+        android:id="@+id/labelLong"
+        android:textSize="15sp"
+        android:layout_marginTop="10sp"
+        android:text="Longitude : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/latitude"/>
+
+    <EditText
+        android:id="@+id/longitude"
+        android:textSize="15sp"
+        android:hint="-1.4259136"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/latitude"
+        app:layout_constraintStart_toEndOf="@+id/labelLong"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10sp"
+        android:text="@string/savebtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnBack"/>
 
     <Button
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go back"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map"
-        tools:ignore="MissingConstraints" />
+        android:text="@string/cancelbtn"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

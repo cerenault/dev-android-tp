@@ -37,7 +37,6 @@ android {
 dependencies {
 
     //Mapbox (voir pour version plus récente de mapbox
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-telemetry:6.2.2'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.0.0'
 
     //Retrofit et convertisseur json de google

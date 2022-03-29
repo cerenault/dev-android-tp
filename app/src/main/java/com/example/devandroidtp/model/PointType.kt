@@ -1,5 +1,5 @@
 package com.example.devandroidtp.model
 
-enum class Type {
+enum class PointType {
     TARGET, CHECKPOINT, BONUS, ATTACK
 }
